@@ -1,8 +1,10 @@
 
-import './App.css';
+
 import Navbar from "./Navbar";
 import Content from "./Home";
 import Deposit from "./Deposit";
+import DepositInfo from "./DepositInfo";
+import DepositReview from "./DepositReview";
 
 import{ BrowserRouter as Router, Route , Routes } from 'react-router-dom';
 function App() {
@@ -10,13 +12,16 @@ function App() {
     <Router>
     <div className="App">
        <Navbar/>
-      <Content/>
+      {/* <Content/> */}
       
       <div className="container">
       
       <Routes>
       <Route  path='/' element={<Content/>}/>
       <Route  path='/Deposit' element={<Deposit/>}/>
+      <Route  path='/DepositInfo' element={<DepositInfo/>}/>
+      <Route  path='/DepositReview' element={<DepositReview/>}/>
+      
       
 
 
