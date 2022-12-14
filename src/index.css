@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body{
+  background-color: aliceblue;
+  margin: none;
+  padding: none;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  height: 80%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+
+}
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  margin: none;
+  padding: 10px;
+}
+.account-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+button{
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: blue;
+  color: white;
+  margin-top: 5px;
+}
+.balance-info{
+  width: 30%;
+  background-color: white;
+  border-radius: 20px;
+  border-bottom: 5px;
+  background-origin: padding-box;
+  box-shadow: 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
