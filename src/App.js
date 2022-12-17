@@ -19,7 +19,7 @@ function App() {
       <Routes>
       <Route  path='/' element={<Content/>}/>
       <Route  path='/Deposit' element={<Deposit/>}/>
-      <Route  path='/DepositInfo' element={<DepositInfo/>}/>
+      <Route  path='/DepositInfo' element={<DepositInfo/>} updateForm/>
       <Route  path='/DepositReview' element={<DepositReview/>}/>
       
       

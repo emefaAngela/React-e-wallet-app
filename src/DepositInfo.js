@@ -1,6 +1,9 @@
 import {Link} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import card from "./images/credit-card.jpg";
 const DepositInfo = () => {
+    const location = useLocation();
+  const state = location.state;
     return ( 
         <div className="deposit-info">
             <div className="filled-form">
@@ -8,7 +11,7 @@ const DepositInfo = () => {
             <div className="text">Deposit amount</div>
             <div className="deposit-amount">
                 <span className="light-bold-text">Deposit Amount:</span>
-                <input className="mini-input" type="text" />
+                <input className="mini-input" type="number"  value={state.depositAmount}/>
             </div>
             <div className="payment-method">
                 <span className="light-bold-text">Deposit method:</span>
@@ -33,7 +36,7 @@ const DepositInfo = () => {
                     <input type="text" placeholder="Card Holder Name" />
                 </div>
                 <div className="link-btn link">
-                    <Link to="/DepositReview">Continue</Link>
+                    <Link to="/DepositReview" state={state}>Continue</Link>
                 </div>
             </div>
         </div>

@@ -1,5 +1,13 @@
-import {Link} from "react-router-dom";
+// import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { increment } from "./redux/transaction";
+import {Link, useLocation} from "react-router-dom";
 const DepositReview = () => {
+    const location = useLocation();
+    const state = location.state;
+//    const {balance}=useSelector((state)=>state.transaction);
+   const dispatch=useDispatch();
+  
     return ( 
         <div className="deposit-info">
             <div className="filled-form">
@@ -7,7 +15,7 @@ const DepositReview = () => {
             <div className="text">Deposit amount</div>
             <div className="deposit-amount">
                 <span className="light-bold-text">Deposit Amount:</span>
-                <input className="mini-input" type="text" />
+                <input className="mini-input" type="number" value={state.depositAmount} />
             </div>
             <div className="payment-method">
                 <span className="light-bold-text">Deposit method:</span>
@@ -42,7 +50,7 @@ const DepositReview = () => {
                         Deposit Amount:
                     </div>
                     <div className="text">
-                        $20.00
+                        <span>$</span>{state.depositAmount}
                     </div>
                     <div className="text">
                         US Dollars
@@ -64,8 +72,8 @@ const DepositReview = () => {
                         <Link to="">update</Link>
                     </div>
                 </div>
-                <div className="link-btn link">
-                    <Link to="/">Submit Payment</Link>
+                <div className="link-btn link" onClick={()=>dispatch(increment(state.depositAmount))}>
+                    <Link to="/"  >Submit Payment</Link>
                 </div>
             </div>
         </div>

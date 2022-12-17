@@ -1,12 +1,14 @@
 import {Link} from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+    const {balance}=useSelector((state)=>state.transaction);
     return ( 
         <div className="container">
             <div className="balance-info">
                     
                     <div className="text">Account Balance</div>
-                    <div className="balance-value">$200.00</div>
+                    <div className="balance-value">{balance}</div>
                     <div className="mini-text text">US Dollars</div>
                     <div className="link-btn link">
                         <Link to="/">Withdraw</Link>
